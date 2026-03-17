@@ -11,10 +11,6 @@ export default defineNuxtConfig({
     '~/assets/css/main.css'
   ],
 
-  // Módulos y herramientas de desarrollo
-  modules: [
-    // 'my-module' <--- Pon las dos rayitas para comentarlo
-  ],
 
   devtools: { 
     enabled: true 

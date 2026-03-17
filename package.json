@@ -2,12 +2,12 @@
   "name": "nuevo_proyector_nuxt",
   "type": "module",
   "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+ "scripts": {
+  "build": "nuxt build",
+  "dev": "nuxt dev",
+  "generate": "nuxt generate",
+  "preview": "nuxt preview",
+  "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "nuxt": "^4.3.1",
