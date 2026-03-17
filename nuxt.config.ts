@@ -13,9 +13,7 @@ export default defineNuxtConfig({
 
   // Módulos y herramientas de desarrollo
   modules: [
-    // Asegúrate de que 'my-module' esté instalado en tu package.json
-    // Si te da error al compilar, puedes comentarlo con //
-    'my-module' 
+    // 'my-module' <--- Pon las dos rayitas para comentarlo
   ],
 
   devtools: { 
