@@ -2,7 +2,7 @@
   <header class="header-container">
     <div class="profile-main">
       <div class="photo-wrapper">
-        <img src="./profile/sergioramirez.jpeg" alt="Ing. Sergio Ramirez" class="profile-photo">
+        <img src="/public/profile/sergioramirez.jpeg" alt="Ing. Sergio Ramirez" class="profile-photo">
       </div>
 
       <div class="info-wrapper">
