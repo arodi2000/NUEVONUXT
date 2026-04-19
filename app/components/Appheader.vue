@@ -1,60 +1,146 @@
 <template>
-  <header class="header-container">
-    <div class="profile-main">
-      <div class="photo-wrapper">
-        <img src="/profile/sergioramirez.jpeg" alt="Ing. Sergio Ramirez" class="profile-photo">
-      </div>
+  <header class="profile-header">
+    <div class="avatar-container">
+      <img 
+        src="/profile/sergioramirez.jpeg" 
+        alt="Ing. Sergio Ramirez" 
+        class="profile-pic" 
+      />
+    </div>
 
-      <div class="info-wrapper">
-        <h1 class="name-title">ING. SERGIO ARODI RAMIREZ PADILLA</h1>
-        <p class="subtitle">Ingeniería en Comunicaciones y Tecnologías • 9no Semestre</p>
-        
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="social-btn linkedin">LinkedIn</a>
-          <a href="https://www.computrabajo.com.mx/perfil/tu-id" target="_blank" class="social-btn computrabajo">Computrabajo</a>
-          <a href="mailto:tu-correo@ejemplo.com" class="social-btn email">Email</a>
-        </div>
+    <div class="user-info">
+      <h1>ING. SERGIO ARODI RAMIREZ PADILLA</h1>
+      <p class="subtitle">Ingeniería en Comunicaciones y Tecnologías • 9no Semestre</p>
+      <p class="social">Ingeniería en Comunicaciones y Tecnologías</p>
+
+      <div class="social-actions">
+        <a 
+          href="https://github.com/TU-USUARIO-GITHUB" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-contact github"
+        >
+          GitHub
+        </a>
+
+        <a 
+          href="https://www.linkedin.com/in/TU-USUARIO-LINKEDIN" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="btn-contact linkedin"
+        >
+          LinkedIn
+        </a>
+
+        <a 
+          href="mailto:tuemail@ejemplo.com?subject=Contacto%20desde%20portafolio" 
+          class="btn-contact email"
+        >
+          Email
+        </a>
       </div>
     </div>
-    <hr class="divider">
   </header>
 </template>
 
+<script setup>
+// Si quieres lógica extra aquí después...
+</script>
+
 <style scoped>
-.header-container { width: 100%; margin-bottom: 25px; }
-.profile-main { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center; }
-
-.profile-photo { 
-  width: 175px; 
-  height: 175px; 
-  border-radius: 50%; 
-  object-fit: cover; 
-  border: 5px solid #2563eb; 
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.profile-header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+  color: #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
 }
 
-.profile-photo:hover {
-  transform: scale(1.15) rotate(2deg);
+.dark .profile-header {
+  background: rgba(0, 0, 0, 0.85);
+  color: #f0f0f0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.avatar-container {
+  /* opcional */
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #2563eb;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.dark .profile-pic {
   border-color: #60a5fa;
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
 }
 
-.info-wrapper { flex: 1; min-width: 300px; }
-.name-title { font-size: 1.85rem; margin: 0; color: #2563eb; font-weight: 900; }
-.night-mode .name-title { color: #60a5fa; }
+.user-info {
+  text-align: center;
+}
 
-.subtitle { font-size: 1.05rem; color: #64748b; margin: 8px 0 22px 0; font-weight: 500; }
-.social-links { display: flex; gap: 12px; }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
 
-.social-btn { padding: 10px 20px; border-radius: 12px; text-decoration: none; font-size: 0.85rem; font-weight: bold; color: white; transition: 0.3s; }
-.linkedin { background-color: #0077b5; }
-.computrabajo { background-color: #ff6b00; }
-.email { background-color: #475569; }
-.social-btn:hover { transform: translateY(-4px); }
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 12px;
+}
 
-.divider { border: none; height: 1px; background: linear-gradient(to right, #2563eb, transparent); margin: 35px 0; opacity: 0.2; }
+.dark .subtitle {
+  color: #bbb;
+}
 
-@media (max-width: 600px) { .profile-main { text-align: center; } .social-links { justify-content: center; } }
+.social {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.dark .social {
+  color: #aaa;
+}
+
+.social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-contact {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: white;
+}
+
+.github    { background: #333; }
+.github:hover    { background: #444; }
+
+.linkedin  { background: #0a66c2; }
+.linkedin:hover  { background: #084d96; }
+
+.email     { background: #ea4335; }
+.email:hover     { background: #c1351f; }
+
+.dark .btn-contact {
+  color: white;
+}
 </style>

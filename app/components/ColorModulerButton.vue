@@ -1,42 +1,31 @@
-<template>
-  <div class="toggle-container">
-    <button @click="toggleTheme" class="professional-toggle">
-      {{ isDarkMode ? '☀️ MODO CLARO' : '🌙 MODO OSCURO' }}
-    </button>
-  </div>
-</template>
-  
 <script setup>
-import { ref, onMounted } from 'vue'
-
-const isDarkMode = ref(false)
-
-const toggleTheme = () => {
-  isDarkMode.value = !isDarkMode.value
-  document.body.classList.toggle('night-mode', isDarkMode.value)
-  localStorage.setItem('theme', isDarkMode.value ? 'dark' : 'light')
-}
-
-onMounted(() => {
-  const saved = localStorage.getItem('theme')
-  if (saved === 'dark') {
-    isDarkMode.value = true
-    document.body.classList.add('night-mode')
-  }
-})
+const colorMode = useColorMode()
 </script>
 
+<template>
+  <button 
+    @click="colorMode.toggle()" 
+    class="color-toggle-btn"
+  >
+    <span v-if="colorMode.value === 'dark'">☀️ Modo Claro</span>
+    <span v-else>🌙 Modo Oscuro</span>
+  </button>
+</template>
+
 <style scoped>
-.toggle-container { display: flex; justify-content: center; margin: 40px 0; }
-.professional-toggle {
-  padding: 14px 28px;
-  border-radius: 50px;
-  border: 1px solid #cbd5e1;
-  background: white;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.3s;
+.color-toggle-btn {
+  @apply px-5 py-2.5 rounded-lg font-medium text-white transition-all duration-300;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
 }
-.night-mode .professional-toggle { background: #1e293b; color: white; border-color: #334155; }
-.professional-toggle:hover { transform: scale(1.05); border-color: #2563eb; }
+
+.color-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+}
+
+.dark .color-toggle-btn {
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4);
+}
 </style>

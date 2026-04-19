@@ -1,25 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // Configuración de rutas para GitHub Pages
-  app: {
-    baseURL: '/NUEVONUXT/', // Nombre exacto de tu repositorio
-    buildAssetsDir: 'assets', // Evita problemas con carpetas que empiezan por "_" en GitHub
-  },
+  devtools: { enabled: true },
 
-  // Tu configuración de estilos
-  css: [
-    '~/assets/css/main.css'
+  modules: [
+    '@nuxtjs/tailwindcss',     // si ya lo tienes, déjalo
+    '@nuxtjs/color-mode'
   ],
 
-
-  devtools: { 
-    enabled: true 
+  colorMode: {
+    preference: 'system',     // sigue el sistema del usuario por defecto
+    fallback: 'light',
+    classSuffix: ''           // importante: usa solo .dark (sin -mode)
   },
 
-  compatibilityDate: '2024-04-03', // O 'latest' como lo tenías
-
-  // Opcional: Si usas Nitro para el despliegue estático
-  nitro: {
-    preset: 'github-pages'
-  }
+  // Opcional: si quieres forzar algo al inicio
+  // app: {
+  //   head: {
+  //     htmlAttrs: { class: 'light' }
+  //   }
+  // }
 })
