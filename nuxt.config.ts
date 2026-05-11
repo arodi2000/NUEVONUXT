@@ -1,22 +1,24 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@nuxtjs/tailwindcss',     // si ya lo tienes, déjalo
+    '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode'
   ],
 
   colorMode: {
-    preference: 'system',     // sigue el sistema del usuario por defecto
+    preference: 'system',
     fallback: 'light',
-    classSuffix: ''           // importante: usa solo .dark (sin -mode)
+    classSuffix: '',
   },
 
-  // Opcional: si quieres forzar algo al inicio
-  // app: {
-  //   head: {
-  //     htmlAttrs: { class: 'light' }
-  //   }
-  // }
+  // Añade esta sección aquí abajo:
+  app: {
+    head: {
+      title: 'MI PORTAFOLIO', // Aquí pones el nombre de tu proyecto
+      meta: [
+        { name: 'description', content: 'Descripción de mi sitio' }
+      ]
+    }
+  }
 })
